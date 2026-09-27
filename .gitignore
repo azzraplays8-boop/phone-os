@@ -1,0 +1,12 @@
+# Generated / QA artifacts
+.qa-profile/
+.vscode/
+node_modules/
+
+# QA test scripts and screenshots (dev only)
+*-qa.mjs
+*-qa2.mjs
+qa-*.mjs
+ee-verify.mjs
+calc-*.png
+calc-shots.mjs

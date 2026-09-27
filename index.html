@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For You ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Hidden final Easter egg: fully additive, no dependency on other systems -->
+    <link rel="stylesheet" href="easter-egg.css">
+</head>
+
+<body>
+
+    <div class="phone">
+
+        <!-- Status Bar -->
+        <div class="status-bar">
+            <div class="dynamic-island"></div>
+            <span id="time">9:28</span>
+
+            <div class="status-icons">
+                <span>●●●</span>
+                <span>📶</span>
+                <span>🔋</span>
+            </div>
+        </div>
+
+        <!-- LOCK SCREEN -->
+
+        <div id="lock-screen" class="lock-screen">
+
+            <div class="lock-glow" aria-hidden="true"></div>
+
+            <div class="lock-clock" role="timer" aria-live="off">
+
+                <div class="lock-time" id="lock-time">
+                    <span id="lock-time-value">12:00</span>
+                    <span class="lock-meridiem" id="lock-time-meridiem">AM</span>
+                </div>
+
+                <div class="lock-date" id="lock-date">
+                    Monday, September 28
+                </div>
+
+                <div class="lock-greeting" id="lock-greeting">
+                    Tap the notification to open it
+                </div>
+
+            </div>
+
+            <div class="notification" id="lock-notification"
+                 role="button"
+                 tabindex="0"
+                 aria-label="Messages notification: You have a secret message">
+
+                <div class="notification-icon" aria-hidden="true">
+                    💬
+                </div>
+
+                <div class="notification-text">
+                    <div class="notification-meta">
+                        <strong>Messages</strong>
+                        <span class="notification-time" id="notification-time">now</span>
+                    </div>
+                    <span class="notification-body">You have a secret message... ❤️</span>
+                </div>
+
+                <div class="notification-hint" aria-hidden="true">
+                    <span class="notification-chevron">›</span>
+                </div>
+
+            </div>
+
+            <button class="unlock-button" id="unlock-button" onclick="unlockPhone()">
+                <span>Click to open</span>
+            </button>
+
+            <div class="lock-footer">
+                Made with love ❤️
+            </div>
+
+        </div>
+
+        <!-- Home Screen -->
+        <main class="home-screen">
+
+            <!-- Subtle romantic greeting, sits below the status bar / Dynamic Island -->
+            <header class="home-header">
+                <p class="home-greeting" id="home-greeting">Good evening, my love ❤️</p>
+                <p class="home-greeting-sub">Every little detail here is for you</p>
+            </header>
+
+            <div class="app-grid">
+
+                <div class="app" onclick="openApp('messages')">
+    <div class="app-icon messages">
+        💬
+        <span class="notification-badge">1</span>
+    </div>
+    <span>Messages</span>
+</div>
+
+               <div class="app" onclick="openApp('camera')">
+    <div class="app-icon camera">📷</div>
+    <span>Camera</span>
+</div>
+
+<div class="app" onclick="openApp('music')">
+    <div class="app-icon music">🎵</div>
+    <span>Music</span>
+</div>
+
+<div class="app" onclick="openApp('notes')">
+    <div class="app-icon notes">📝</div>
+    <span>Notes</span>
+</div>
+
+<div class="app" onclick="openApp('calculator')">
+    <div class="app-icon calculator">🧮</div>
+    <span>Calculator</span>
+</div>
+
+<div class="app" onclick="openApp('settings')">
+    <div class="app-icon settings">⚙️</div>
+    <span>Settings</span>
+</div>
+
+            </div>
+
+        </main>
+
+
+        <!-- Dock -->
+        <div class="dock">
+
+            <div class="dock-icon" onclick="openApp('messages')" role="button" tabindex="0" aria-label="Messages">💬</div>
+            <div class="dock-icon" onclick="openApp('music')" role="button" tabindex="0" aria-label="Music">🎵</div>
+            <div class="dock-icon" onclick="openApp('notes')" role="button" tabindex="0" aria-label="Notes">📝</div>
+            <div class="dock-icon" onclick="openApp('camera')" role="button" tabindex="0" aria-label="Camera">📷</div>
+
+        </div>
+
+
+        <!-- Home Indicator -->
+        <div class="home-indicator"></div>
+
+    </div>
+
+<!-- APP WINDOW -->
+
+<div id="app-window" class="app-window">
+
+    <div class="app-header">
+        <button onclick="closeApp()">‹</button>
+        <span id="app-title">App</span>
+    </div>
+
+    <div id="app-content" class="app-content">
+    </div>
+
+</div>
+
+    <script src="script.js"></script>
+
+    <!-- Hidden final Easter egg: fully additive, no dependency on other systems -->
+    <script src="easter-egg.js"></script>
+
+</body>
+</html>
